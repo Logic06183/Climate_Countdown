@@ -1,6 +1,9 @@
 % Required packages
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{mathptmx}  % Times New Roman font
+\usepackage{microtype}  % Better typography
+\usepackage[scaled=.92]{helvet}  % Helvetica for sans serif
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -10,63 +13,126 @@
 \usepackage{fancyhdr}
 \usepackage[most]{tcolorbox}
 \usepackage{geometry}
+\usepackage{multicol}
+\usepackage{abstract}
+\usepackage{titlesec}
+\usepackage{authblk}
+\usepackage{setspace}
+\usepackage{caption}
+\usepackage{float}
 
-% Page geometry
+% Page geometry - Lancet style
 \geometry{
     a4paper,
-    top=2.5cm,
-    bottom=2.5cm,
-    left=2.5cm,
-    right=2.5cm,
+    top=2cm,
+    bottom=2cm,
+    left=1.8cm,
+    right=1.8cm,
+    columnsep=0.6cm,
     headheight=15pt
 }
 
-% Header and footer setup
+% Two-column layout
+\setlength{\columnseprule}{0pt}
+
+% Section formatting
+\titleformat{\section}
+    {\normalfont\large\bfseries}
+    {}
+    {0em}
+    {}
+
+\titleformat{\subsection}
+    {\normalfont\normalsize\bfseries}
+    {}
+    {0em}
+    {}
+
+% Spacing
+\setlength{\parindent}{0.5cm}
+\setlength{\parskip}{0pt}
+\linespread{1.15}
+
+% Header and footer
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\leftmark}
-\fancyhead[R]{\thepage}
+\fancyhead[L]{\small\textit{The 2025 African Countdown on Health and Climate Change}}
+\fancyhead[R]{\small\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 
 % Custom environments
 \newtcolorbox{keymessage}{
-    colback=gray!5,
+    enhanced,
+    colback=white,
     colframe=gray!50!black,
+    boxrule=0.5pt,
+    sharp corners,
     title=Key Message,
-    fonttitle=\bfseries
+    attach boxed title to top left,
+    boxed title style={
+        sharp corners,
+        size=small,
+        colback=gray!50!black,
+        colframe=gray!50!black
+    }
 }
 
 \newtcolorbox{recommendation}{
-    colback=blue!5,
+    enhanced,
+    colback=white,
     colframe=blue!50!black,
+    boxrule=0.5pt,
+    sharp corners,
     title=Recommendation,
-    fonttitle=\bfseries
+    attach boxed title to top left,
+    boxed title style={
+        sharp corners,
+        size=small,
+        colback=blue!50!black,
+        colframe=blue!50!black
+    }
 }
 
-% Title page settings
-\makeatletter
-\renewcommand{\maketitle}{
-    \begin{titlepage}
-        \begin{center}
-            \vspace*{2cm}
-            {\LARGE\bfseries\@title\par}
-            \vspace{2cm}
-            {\Large\@author\par}
-            \vspace{1cm}
-            {\large\@date\par}
-        \end{center}
-    \end{titlepage}
+% Abstract styling
+\renewenvironment{abstract}
+    {\small\quotation\noindent\textbf{Abstract}\\\itshape}
+    {\endquotation}
+
+% Caption styling
+\captionsetup{
+    font=small,
+    labelfont=bf,
+    justification=justified,
+    singlelinecheck=false
 }
-\makeatother
 
 % Hyperref settings
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
     filecolor=magenta,
-    urlcolor=cyan,
+    urlcolor=blue,
     pdftitle={2025 African Countdown on Health and Climate Change},
     pdfauthor={African Countdown Collaboration},
     pdfsubject={Climate Change and Health},
     pdfkeywords={climate change, health, Africa, adaptation}
+}
+
+% Define colors
+\definecolor{lancetblue}{RGB}{0,87,166}
+\definecolor{lancetgray}{RGB}{102,102,102}
+
+% Custom title page
+\renewcommand{\maketitle}{
+    \twocolumn[
+        \begin{@twocolumnfalse}
+        \vspace*{2cm}
+        {\huge\bfseries\@title\par}
+        \vspace{1.5cm}
+        {\large\@author\par}
+        \vspace{1cm}
+        {\large\@date\par}
+        \vspace{2cm}
+        \end{@twocolumnfalse}
+    ]
 }

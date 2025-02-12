@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper]{article}
+\documentclass[twocolumn,12pt,a4paper]{article}
 
 % Include preamble with packages and styling
 \input{sections/preamble}
@@ -13,17 +13,19 @@
 
 \begin{document}
 
-% Title page
+% Title page (single column)
 \input{sections/title}
 
-% Executive Summary
+% Executive Summary (single column)
+\onecolumn
 \input{sections/executive_summary}
 
-% Table of Contents
+% Table of Contents (single column)
 \tableofcontents
 \clearpage
 
-% Main sections
+% Main sections (two columns)
+\twocolumn
 \input{sections/introduction}
 \input{sections/methods}
 \input{sections/climate_impacts}
@@ -33,7 +35,9 @@
 \input{sections/policy_response}
 \input{sections/recommendations}
 
-% References
+% Acknowledgments and References (single column)
+\onecolumn
+\input{sections/acknowledgments}
 \input{sections/references}
 
 \end{document}
