@@ -1,33 +1,107 @@
-\documentclass[twocolumn,12pt,a4paper]{article}
+\documentclass[12pt,a4paper]{article}
 
 % Include preamble with packages and styling
 \input{sections/preamble}
 
-% Packages
+% Additional packages for enhanced styling
 \usepackage{geometry}
 \usepackage{tocloft}
+\usepackage{titling}
+\usepackage{xcolor}
+\usepackage{graphicx}
 
-% Custom environments
-\newenvironment{keymessage}{\par\vspace{0.5cm}\noindent}{\par\vspace{0.5cm}}
-\newenvironment{recommendation}{\par\vspace{0.5cm}\noindent}{\par\vspace{0.5cm}}
+% Define custom colors
+\definecolor{titleblue}{RGB}{0,74,124}
+\definecolor{subtitlegray}{RGB}{90,90,90}
+
+% Title page styling
+\pretitle{%
+    \begin{center}
+    \vspace*{2cm}
+    {\fontsize{24}{28}\selectfont\color{titleblue}\bfseries}
+}
+\posttitle{\par\end{center}}
+
+\preauthor{%
+    \begin{center}
+    \vspace{1cm}
+    \normalsize
+}
+\postauthor{\par\end{center}}
+
+\predate{%
+    \begin{center}
+    \vspace{0.5cm}
+    {\color{subtitlegray}\small}
+}
+\postdate{\par\end{center}}
+
+% Title definitions
+\title{The 2025 African Countdown\\[0.3em]
+on Health and Climate Change\\[1cm]
+{\color{subtitlegray}\Large A Regional Analysis of Climate Change Impacts\\
+on Health Systems and Adaptation Strategies}}
+
+\author{%
+    \textbf{Authors}\\[0.5cm]
+    Matthew Chersich\textsuperscript{1}\thanks{Corresponding author: matthew.chersich@witshealth.co.za}\\
+    Admire Chikandiwa\textsuperscript{1} \\
+    Ijeoma Solarin\textsuperscript{1} \\
+    Fiona Scorgie\textsuperscript{1} \\
+    Danilinka Lakhoo\textsuperscript{1} \\
+    Craig Parker\textsuperscript{1} \\
+    Elizabeth Frederick\textsuperscript{1} \\
+    Ruvimbo Forget\textsuperscript{1} \\
+    Natasha Lallco\textsuperscript{1} \\
+    Reneilwe Satekge\textsuperscript{1} \\
+    Amy Beukes\textsuperscript{1}%
+    \\[1.5cm]
+    {\small\itshape
+    \textsuperscript{1}Wits Planetary Health Research\\
+    School of Clinical Medicine\\
+    University of the Witwatersrand\\
+    Johannesburg, South Africa}%
+}
+
+\date{{\small February 2025}\\[0.5cm]
+{\footnotesize Technical Report}}
 
 \begin{document}
+% Custom title page
+\thispagestyle{empty}
+\maketitle
 
-% Title page (single column)
-\input{sections/title}
+% Add a decorative line
+\vspace{-1cm}
+\begin{center}
+\rule{0.5\textwidth}{0.5pt}
+\end{center}
+
+\clearpage
+
+\begin{abstract}
+The 2025 African Countdown on Health and Climate Change presents a comprehensive analysis of climate change impacts on health systems across Africa. This report, building on the global Lancet Countdown framework, examines regional variations in climate-health impacts through detailed case studies and systematic vulnerability assessments. Our findings reveal unprecedented challenges, with Eastern Africa experiencing severe flooding affecting 1.6 million people and Southern Africa facing its worst drought in a century. Health system vulnerability assessments show critical gaps, with only 28\% of facilities having climate-resilient features and 52\% lacking reliable essential services during extreme events. Regional risk scores range from 8.5/10 in Eastern Africa to 6.9/10 in Central Africa, reflecting varying levels of exposure and adaptive capacity.
+
+The economic analysis indicates substantial financial burdens, with direct emergency response costs reaching \$2.8B and infrastructure repair needs of \$1.5B. Health systems face 30\% increases in medical supply costs and 25\% additional personnel requirements. Adaptation investments, projected at \$50B annually, are distributed across infrastructure hardening (\$850M), disease surveillance (\$420M), and capacity building (\$380M). Case studies from across the continent demonstrate cascading impacts, including extended malaria transmission seasons (+31\%), widespread service disruptions, and significant population displacement.
+
+Drawing on data from multiple sectors and institutions, we identify critical intervention areas including health system infrastructure strengthening, enhanced disease surveillance networks, and improved emergency response capabilities. The evidence points to an urgent need for targeted adaptation strategies, with particular focus on vulnerable populations and regions facing multiple concurrent climate threats. These findings underscore the imperative for immediate action to protect public health and strengthen health system resilience across Africa.
+\end{abstract}
+
+\clearpage
 
 % Executive Summary (single column)
-\onecolumn
 \input{sections/executive_summary}
 
 % Table of Contents (single column)
 \tableofcontents
+
 \clearpage
 
 % Main sections (two columns)
 \twocolumn
 \input{sections/introduction}
 \input{sections/methods}
+\input{sections/indicators}
 \input{sections/climate_impacts}
 \input{sections/health_implications}
 \input{sections/economic_implications}

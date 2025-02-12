@@ -1,14 +1,17 @@
 % Required packages
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{mathptmx}  % Times New Roman font
+\usepackage{enumitem}  % For better list control
+\usepackage{booktabs}  % For professional tables
+\usepackage{ragged2e}  % For better text alignment
+\usepackage{newtxtext,newtxmath}  % Times New Roman-like font
+\usepackage[parfill]{parskip}  % Better paragraph spacing
 \usepackage{microtype}  % Better typography
 \usepackage[scaled=.92]{helvet}  % Helvetica for sans serif
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{natbib}
-\usepackage{hyperref}
 \usepackage[table,xcdraw]{xcolor}
 \usepackage{fancyhdr}
 \usepackage[most]{tcolorbox}
@@ -16,87 +19,161 @@
 \usepackage{multicol}
 \usepackage{abstract}
 \usepackage{titlesec}
-\usepackage{authblk}
 \usepackage{setspace}
 \usepackage{caption}
 \usepackage{float}
+\usepackage{tabularx}  % For flexible width tables
+\usepackage{etoolbox}  % For environment hooks
 
-% Page geometry - Lancet style
+% Define colors
+\definecolor{lancetblue}{RGB}{0,87,166}
+\definecolor{lancetgray}{RGB}{102,102,102}
+
+% Page geometry - Adjusted for better two-column layout
 \geometry{
     a4paper,
-    top=2cm,
-    bottom=2cm,
-    left=1.8cm,
-    right=1.8cm,
-    columnsep=0.6cm,
-    headheight=15pt
+    top=2.5cm,
+    bottom=2.5cm,
+    left=2cm,
+    right=2cm,
+    columnsep=0.75cm,
+    headheight=15pt,
+    headsep=15pt,
+    footskip=1.5cm,
+    includehead,
+    includefoot
 }
 
-% Two-column layout
-\setlength{\columnseprule}{0pt}
+% Font size adjustments for two-column layout
+\renewcommand{\normalsize}{\fontsize{10}{12}\selectfont}
+\renewcommand{\small}{\fontsize{9}{11}\selectfont}
+\renewcommand{\footnotesize}{\fontsize{8}{10}\selectfont}
 
-% Section formatting
+% Spacing settings
+\setlength{\parindent}{1em}
+\setlength{\parskip}{0.5ex}
+\linespread{1.05}
+
+% Section styling with more subtle spacing
 \titleformat{\section}
     {\normalfont\large\bfseries}
     {}
     {0em}
     {}
+    [\vspace{0.3em}\hrule\vspace{0.5em}]
+
+\titlespacing*{\section}
+    {0pt}  % left margin
+    {2ex plus 1ex minus .2ex}  % space above
+    {1.5ex plus .2ex}  % space below
 
 \titleformat{\subsection}
-    {\normalfont\normalsize\bfseries}
+    {\normalfont\large\bfseries}
     {}
     {0em}
     {}
+    [\vspace{0.2em}\hrule height 0.5pt\vspace{0.4em}]
 
-% Spacing
-\setlength{\parindent}{0.5cm}
-\setlength{\parskip}{0pt}
-\linespread{1.15}
+\titlespacing*{\subsection}
+    {0pt}  % left margin
+    {2ex plus 1ex minus .2ex}  % space above
+    {1ex plus .2ex}  % space below
+
+% Add moderate spacing before and after environments
+\BeforeBeginEnvironment{table}{\vspace{1ex}}
+\AfterEndEnvironment{table}{\vspace{1ex}}
+\BeforeBeginEnvironment{table*}{\vspace{1ex}}
+\AfterEndEnvironment{table*}{\vspace{1ex}}
+\BeforeBeginEnvironment{figure}{\vspace{1ex}}
+\AfterEndEnvironment{figure}{\vspace{1ex}}
+\BeforeBeginEnvironment{figure*}{\vspace{1ex}}
+\AfterEndEnvironment{figure*}{\vspace{1ex}}
+
+% Simplified section break
+\newcommand{\sectionbreak}{%
+    \vspace{1em}%
+    \hrule height 0.4pt
+    \vspace{1em}%
+}
+
+% Adjust spacing around lists
+\setlist{
+    noitemsep,
+    topsep=0.3ex,
+    parsep=0pt,
+    partopsep=0pt,
+    leftmargin=1.5em,
+    before={\vspace{0.3em}},  % Space before list
+    after={\vspace{0.3em}}    % Space after list
+}
+
+% Table settings
+\renewcommand{\arraystretch}{1.1}
+\setlength{\tabcolsep}{4pt}
+
+% Adjust spacing around floats
+\setlength{\textfloatsep}{8pt plus 2pt minus 2pt}
+\setlength{\intextsep}{8pt plus 2pt minus 2pt}
+\setlength{\floatsep}{8pt plus 2pt minus 2pt}
+\setlength{\abovecaptionskip}{4pt}
+\setlength{\belowcaptionskip}{4pt}
 
 % Header and footer
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\small\textit{The 2025 African Countdown on Health and Climate Change}}
+\fancyhead[L]{\small\itshape{The 2025 African Countdown on Health and Climate Change}}
 \fancyhead[R]{\small\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 
 % Custom environments
 \newtcolorbox{keymessage}{
     enhanced,
-    colback=white,
-    colframe=gray!50!black,
+    colback=gray!5,
+    colframe=gray!40,
     boxrule=0.5pt,
     sharp corners,
-    title=Key Message,
+    title={\bfseries Key Message},
     attach boxed title to top left,
     boxed title style={
         sharp corners,
         size=small,
-        colback=gray!50!black,
-        colframe=gray!50!black
-    }
+        colback=gray!40,
+        colframe=gray!40
+    },
+    before skip=0.5em,
+    after skip=0.5em
 }
 
 \newtcolorbox{recommendation}{
     enhanced,
     colback=white,
-    colframe=blue!50!black,
+    colframe=lancetblue,
     boxrule=0.5pt,
     sharp corners,
-    title=Recommendation,
+    title={\bfseries Recommendation},
     attach boxed title to top left,
     boxed title style={
         sharp corners,
         size=small,
-        colback=blue!50!black,
-        colframe=blue!50!black
+        colback=lancetblue,
+        colframe=lancetblue
     }
 }
 
-% Abstract styling
-\renewenvironment{abstract}
-    {\small\quotation\noindent\textbf{Abstract}\\\itshape}
-    {\endquotation}
+% Abstract styling with tighter spacing
+\renewenvironment{abstract}{%
+    \small
+    \begin{center}%
+    {\bfseries Abstract}\vspace{-0.5em}\vspace{0pt}%
+    \end{center}%
+    \list{}{%
+      \setlength{\leftmargin}{1cm}%
+      \setlength{\rightmargin}{\leftmargin}%
+    }%
+    \item\relax\justifying
+}{%
+    \endlist
+}
 
 % Caption styling
 \captionsetup{
@@ -106,33 +183,41 @@
     singlelinecheck=false
 }
 
-% Hyperref settings
+% Custom title page with adjusted spacing
+\makeatletter
+\renewcommand{\maketitle}{%
+    \begingroup
+    \setlength{\parindent}{0pt}%
+    \begin{center}
+    \vspace*{2cm}% Reduced top margin
+    {\@title\par}% Title formatting handled in title definition
+    \vspace{2cm}% Reduced space after title
+    {%
+    \normalsize% Standard size for authors
+    \lineskip 0.5em% Reduced line spacing between authors
+    \begin{tabular}[t]{@{}c@{}}% Remove extra spacing
+    \@author
+    \end{tabular}\par}%
+    \vspace{1.5cm}% Reduced space before date
+    {\@date\par}% Date formatting handled in date definition
+    \end{center}
+    \endgroup
+    \thispagestyle{empty}%
+}
+\makeatother
+
+% Adjust author spacing
+\renewcommand\and{\\\vspace{0.4em}}% Reduced space between authors
+
+% Hyperref settings (should be last)
+\usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
-    linkcolor=blue,
+    linkcolor=lancetblue,
     filecolor=magenta,
-    urlcolor=blue,
+    urlcolor=lancetblue,
     pdftitle={2025 African Countdown on Health and Climate Change},
     pdfauthor={African Countdown Collaboration},
     pdfsubject={Climate Change and Health},
     pdfkeywords={climate change, health, Africa, adaptation}
-}
-
-% Define colors
-\definecolor{lancetblue}{RGB}{0,87,166}
-\definecolor{lancetgray}{RGB}{102,102,102}
-
-% Custom title page
-\renewcommand{\maketitle}{
-    \twocolumn[
-        \begin{@twocolumnfalse}
-        \vspace*{2cm}
-        {\huge\bfseries\@title\par}
-        \vspace{1.5cm}
-        {\large\@author\par}
-        \vspace{1cm}
-        {\large\@date\par}
-        \vspace{2cm}
-        \end{@twocolumnfalse}
-    ]
 }
