@@ -1,0 +1,70 @@
+% Essential packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{times}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{amsmath, amssymb}
+\usepackage{natbib}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+
+% Page geometry
+\geometry{a4paper, margin=1in}
+
+% Line spacing
+\setstretch{1.25}
+
+% Title formatting similar to Lancet Countdown style
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection.}{1em}{}
+\titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection.}{1em}{}
+\titleformat{\subsubsection}{\normalfont\normalsize\bfseries}{\thesubsubsection.}{1em}{}
+
+% No paragraph indent
+\setlength\parindent{0pt}
+
+% Hyperref setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={The 2025 African Countdown on Health and Climate Change},
+    pdfpagemode=FullScreen,
+}
+
+% Custom environments for key messages and recommendations
+\newenvironment{keymessage}{
+    \begin{tcolorbox}[
+        colback=blue!5,
+        colframe=blue!75,
+        title=Key Message
+    ]
+}{
+    \end{tcolorbox}
+}
+
+\newenvironment{recommendation}{
+    \begin{tcolorbox}[
+        colback=green!5,
+        colframe=green!75,
+        title=Recommendation
+    ]
+}{
+    \end{tcolorbox}
+}
+
+% Header and footer setup
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\slshape\nouppercase{\leftmark}}
+\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
