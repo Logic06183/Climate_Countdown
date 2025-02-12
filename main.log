@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.1.14)  12 FEB 2025 07:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.1.14)  12 FEB 2025 07:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -805,3 +805,139 @@ File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
 \lst@framebox=\box81
 )
 (C:\Users\CraigParker\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings
+.cfg
+File: listings.cfg 2024/09/23 1.10c listings configuration
+))
+Package: listings 2024/09/23 1.10c (Carsten Heinz)
+
+(C:\Users\CraigParker\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcblist
+ingscore.code.tex
+Library (tcolorbox): 'tcblistingscore.code.tex' version '6.4.1'
+
+(C:\Users\CraigParker\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbproc
+essing.code.tex
+Library (tcolorbox): 'tcbprocessing.code.tex' version '6.4.1'
+)
+\c@tcblisting=\count333
+))
+(C:\Users\CraigParker\AppData\Local\Programs\MiKTeX\tex/latex/listingsutf8\list
+ingsutf8.sty
+Package: listingsutf8 2019-12-10 v1.5 Allow UTF-8 in listings input (HO)
+))
+(C:\Users\CraigParker\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbexte
+rnal.code.tex
+Library (tcolorbox): 'tcbexternal.code.tex' version '6.4.1'
+)
+(C:\Users\CraigParker\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbmaga
+zine.code.tex
+Library (tcolorbox): 'tcbmagazine.code.tex' version '6.4.1'
+)
+(C:\Users\CraigParker\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbvign
+ette.code.tex
+Library (tcolorbox): 'tcbvignette.code.tex' version '6.4.1'
+
+(C:\Users\CraigParker\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlay
+er/tikz/libraries\tikzlibraryfadings.code.tex
+File: tikzlibraryfadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\CraigParker\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\p
+gflibraryfadings.code.tex
+File: pgflibraryfadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(C:\Users\CraigParker\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbpost
+er.code.tex
+Library (tcolorbox): 'tcbposter.code.tex' version '6.4.1'
+))
+(C:\Users\CraigParker\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry
+.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(C:\Users\CraigParker\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.st
+y
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count334
+\Gm@cntv=\count335
+\c@Gm@tempcnt=\count336
+\Gm@bindingoffset=\dimen273
+\Gm@wd@mp=\dimen274
+\Gm@odd@mp=\dimen275
+\Gm@even@mp=\dimen276
+\Gm@layoutwidth=\dimen277
+\Gm@layoutheight=\dimen278
+\Gm@layouthoffset=\dimen279
+\Gm@layoutvoffset=\dimen280
+\Gm@dimlist=\toks43
+
+(C:\Users\CraigParker\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry
+.cfg))
+Package hyperref Info: Option `colorlinks' set `true' on input line 72.
+)
+(C:\Users\CraigParker\AppData\Local\Programs\MiKTeX\tex/latex/tocloft\tocloft.s
+ty
+Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
+Package tocloft Info: The document has section divisions on input line 51.
+\cftparskip=\skip74
+\cftbeforetoctitleskip=\skip75
+\cftaftertoctitleskip=\skip76
+\cftbeforepartskip=\skip77
+\cftpartnumwidth=\skip78
+\cftpartindent=\skip79
+\cftbeforesecskip=\skip80
+\cftsecindent=\skip81
+\cftsecnumwidth=\skip82
+\cftbeforesubsecskip=\skip83
+\cftsubsecindent=\skip84
+\cftsubsecnumwidth=\skip85
+\cftbeforesubsubsecskip=\skip86
+\cftsubsubsecindent=\skip87
+\cftsubsubsecnumwidth=\skip88
+\cftbeforeparaskip=\skip89
+\cftparaindent=\skip90
+\cftparanumwidth=\skip91
+\cftbeforesubparaskip=\skip92
+\cftsubparaindent=\skip93
+\cftsubparanumwidth=\skip94
+\cftbeforeloftitleskip=\skip95
+\cftafterloftitleskip=\skip96
+\cftbeforefigskip=\skip97
+\cftfigindent=\skip98
+\cftfignumwidth=\skip99
+\c@lofdepth=\count337
+\c@lotdepth=\count338
+\cftbeforelottitleskip=\skip100
+\cftafterlottitleskip=\skip101
+\cftbeforetabskip=\skip102
+\cfttabindent=\skip103
+\cfttabnumwidth=\skip104
+)
+
+! LaTeX Error: Command \keymessage already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.11 ...space{0.5cm}\noindent}{\par\vspace{0.5cm}}
+                                                  
+? 
+! Emergency stop.
+ ...                                              
+                                                  
+l.11 ...space{0.5cm}\noindent}{\par\vspace{0.5cm}}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+ 
+Here is how much of TeX's memory you used:
+ 27429 strings out of 473536
+ 554851 string characters out of 5712052
+ 959079 words of memory out of 5000000
+ 50251 multiletter control sequences out of 15000+600000
+ 559899 words of font info for 38 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 103i,1n,104p,468b,387s stack positions out of 10000i,1000n,20000p,200000b,200000s
+!  ==> Fatal error occurred, no output PDF file produced!
